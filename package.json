@@ -11,7 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "sprite-vue": "^0.1.2",
+    "sprite-vue": "^0.6.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

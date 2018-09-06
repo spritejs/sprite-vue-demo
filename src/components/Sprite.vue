@@ -5,9 +5,9 @@
         <sprite :pos="[100, 100]" :bgcolor="bgcolor" :size="[100, 100]" v-on:click="onClick"
         v-on:mouseenter="onMouseEnter"
         v-on:mouseleave="onMouseLeave"></sprite>
-        <label v-show="toggle" :pos="[300, 100]" :width="300"
+        <s-label v-show="toggle" :pos="[300, 100]" :width="300"
         font="24px '宋体'" lineBreak="normal" :text="text">
-        </label>
+        </s-label>
       </group>
       <group display="flex" :pos="[100, 500]" :width="600" justifyContent="space-between">
         <sprite v-for="(item, key, index) in items" v-show="item.visible" :bgcolor="item.color"
