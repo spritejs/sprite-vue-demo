@@ -1,0 +1,40 @@
+{
+  "config": {
+    "title": "My Cool Project",
+    "description": "This is my awesome documentation",
+    "themeConfig": {},
+    "ordering": "descending",
+    "version": "1.0.0",
+    "repository": null,
+    "native": false
+  },
+  "entries": {
+    "doc/index.mdx": {
+      "name": "Hello world",
+      "route": "/",
+      "id": "d4cfa8716434b7777282497b774bfd3e",
+      "filepath": "doc/index.mdx",
+      "link": null,
+      "slug": "doc-index",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "hello-world",
+          "value": "Hello world"
+        },
+        {
+          "depth": 1,
+          "slug": "button",
+          "value": "Button"
+        },
+        {
+          "depth": 2,
+          "slug": "basic-usage",
+          "value": "Basic usage"
+        }
+      ]
+    }
+  }
+}
