@@ -40,19 +40,19 @@ import CodePen from './component/codepen'
 SpriteJS的默认元素包括Scene、Layer、Group、Sprite、Label、Path，对应的Vue标签名为`s-scene`、`s-layer`、`s-group`、`s-sprite`、`s-label`、`s-path`，其中与浏览器DOM和SVG标签没有重名的如Scene、Layer、Group、Sprite这几个标签的`s-`前缀可以省略，Label和Path的前缀不可以省略。
 
 <CodePen>
-<p data-height="387" data-theme-id="13617" data-slug-hash="oPaJzO" data-default-tab="html,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/oPaJzO/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="387" data-theme-id="13617" data-slug-hash="oPaJzO" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/oPaJzO/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 </CodePen>
 
 标签的属性可以分开写，也可以直接写一个`attrs`属性，即
 
 ```xml
-<sprite x="10" y="20"></script>
+<sprite x="10" y="20"></sprite>
 ```
 
 等价于
 
 ```xml
-<sprite :attrs="{x: 10, y: 20}"</script>
+<sprite :attrs="{x: 10, y: 20}"></sprite>
 ```
 
 前面的例子就把`fillColor="red"`写成`:attrs={fillColor:"red"}`是因为在CodePen中会默认将标签的属性转成小写，而SpriteJS里属性是大小写敏感的，这么写可以避免CodePen将属性`fillColor`错误转成`fillcolor`。
