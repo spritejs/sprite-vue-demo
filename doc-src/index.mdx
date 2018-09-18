@@ -13,7 +13,7 @@ SpriteVue 是结合 [SpriteJS](http://spritejs.org/) 和 [Vue](https://cn.vuejs.
 
 我们可以直接通过CDN引入sprite-vue：
 
-```html
+```xml
 <script src="https://unpkg.com/sprite-vue/dist/sprite-vue.min.js"></script>
 ```
 
@@ -32,5 +32,122 @@ new Vue({
 import CodePen from './component/codepen'
 
 <CodePen>
-  <p data-height="378" data-theme-id="13617" data-slug-hash="Wgaavy" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" className="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/Wgaavy/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="378" data-theme-id="13617" data-slug-hash="Wgaavy" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" className="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/Wgaavy/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+</CodePen>
+
+## Sprite标签
+
+SpriteJS的默认元素包括Scene、Layer、Group、Sprite、Label、Path，对应的Vue标签名为`s-scene`、`s-layer`、`s-group`、`s-sprite`、`s-label`、`s-path`，其中与浏览器DOM和SVG标签没有重名的如Scene、Layer、Group、Sprite这几个标签的`s-`前缀可以省略，Label和Path的前缀不可以省略。
+
+<CodePen>
+<p data-height="387" data-theme-id="13617" data-slug-hash="oPaJzO" data-default-tab="html,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/oPaJzO/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+</CodePen>
+
+标签的属性可以分开写，也可以直接写一个`attrs`属性，即
+
+```xml
+<sprite x="10" y="20"></script>
+```
+
+等价于
+
+```xml
+<sprite :attrs="{x: 10, y: 20}"</script>
+```
+
+前面的例子就把`fillColor="red"`写成`:attrs={fillColor:"red"}`是因为在CodePen中会默认将标签的属性转成小写，而SpriteJS里属性是大小写敏感的，这么写可以避免CodePen将属性`fillColor`错误转成`fillcolor`。
+
+## 事件和订阅
+
+在SpriteJS中默认代理了Scene上的mouse和touch事件，所以我们可以很方便地在sprite元素中监听这些事件。可默认监听的事件包括：
+
+- mousedown
+- mouseup
+- mousemove
+- mouseenter
+- mouseleave
+- touchstart
+- touchend
+- touchmove
+- click
+
+我们还可以监听其他一些非DOM事件，包括：
+
+- preload  Scene预加载资源中
+- load     Scene预加载资源完成
+- udpate   元素的属性更新
+- append   元素被添加到parent上
+- remove   元素被从parent上移除
+
+以及state相关的事件，详见[状态管理](http://spritejs.org/#/zh-cn/guide/states)
+
+对于其他的一些DOM事件，比如键盘事件，我们可以通过Scene的delegateEvent方法扩展要代理的事件。
+
+下面的例子监听keydown事件并根据`r`、`g`、`b`键值改变五角星的颜色。
+
+<CodePen>
+<p data-height="352" data-theme-id="13617" data-slug-hash="MqPZNz" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/MqPZNz/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+</CodePen>
+
+## 扩展vue组件
+
+我们可以很方便地用vue的方式定义扩展组件。
+
+<CodePen>
+<p data-height="354" data-theme-id="13617" data-slug-hash="wEYZWW" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/wEYZWW/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+</CodePen>
+
+## 扩展sprite元素
+
+除了扩展vue组件之外，我们仍然可以扩展sprite本身的元素。要让vue识别扩展的元素，需要通过registerNodeType方法将它注册为标签。
+
+<CodePen>
+<p data-height="357" data-theme-id="13617" data-slug-hash="KxGYOB" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/KxGYOB/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+</CodePen>
+
+## 状态和效果
+
+我们可以给Sprite元素添加states和actions，states一组状态，actions定义切换到某个状态的行为。要深入了解states和actions，可以阅读[这部分文档](http://spritejs.org/#/zh-cn/guide/states)。
+
+下面的例子，我们点击圆形，它的颜色会产生一个随机的过度改变。
+
+<CodePen>
+<p data-height="359" data-theme-id="13617" data-slug-hash="MqPMZm" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/MqPMZm/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+</CodePen>
+
+## Transition
+
+我们可以通过s-transition标签给Sprite元素添加特殊的过度动画，`s-transition`可以添加四种属性，分别代表四个不同时机的过度动画，分别是：
+
+- enter 元素被添加到文档树中时触发
+- exit 元素被从文档树中移除时触发
+- show 元素被显示时触发
+- hide 元素被影藏时触发
+
+这四个属性可以设置不同的过度类型，SpriteVue内置以下过度类型：
+
+- fade-in 透明度从0变化到当前值
+- fade-out 透明度从当前值变化到0
+- slide-in-left translateX值从-300变化到0，同时透明度从0变化到当前值
+- slide-in-right translateX值从300变化到0，同时透明度从0变化到当前值
+- slide-in-top translateY值从-300变化到0，同时透明度从0变化到当前值
+- slide-in-bottom tranlateY值从300变化到0，同时透明度从0变化到当前值
+- slide-out-left translateX值从0变化到-300，同时透明度从当前值变化到0
+- slide-out-right translateX值从0变化到300，同时透明度从当前值变化到0
+- slide-out-top translateY值从0变化到-300，同时透明度从当前值变化到0
+- slide-out-bottom translateY值从0变化到300，同时透明度从当前值变化到0
+
+下面的例子，三个圆（交通灯）随着时间循环变化。`v-if/v-else`指令结合`key`设置可以依次触发三个元素的enter、leave操作。
+
+<CodePen>
+<p data-height="410" data-theme-id="13617" data-slug-hash="MqzYRq" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/MqzYRq/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+</CodePen>
+
+注意`s-transition`除了传字符串'fade-in'参数之外，还可以传数组，`:enter="['fade-in', duration, easing]"`，slide类的参数还可以多传一个，如`show="['slide-in-left', duration, easing, distance]"`。
+
+除了使用enter和exit，我们可以配合`v-show`指令使用show和hide：
+
+<CodePen>
+<p data-height="350" data-theme-id="13617" data-slug-hash="qMQOVx" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/qMQOVx/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 </CodePen>
