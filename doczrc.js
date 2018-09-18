@@ -1,4 +1,5 @@
 export default {
-  title: 'My Cool Project',
-  description: 'This is my awesome documentation',
+  title: 'Sprite Vue',
+  description: 'Render spritejs elements using Vue',
+  dest: '/docs',
 }

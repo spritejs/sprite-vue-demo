@@ -1,32 +1,36 @@
 ---
-name: Hello world
+name: 简介
 route: '/'
 ---
 
-# Hello world
+# 简介
 
-import { Playground } from 'docz'
+SpriteVue 是结合 [SpriteJS](http://spritejs.org/) 和 [Vue](https://cn.vuejs.org/) 的 Canvas2D 渲染引擎，它让我们能够以组件化及声明式的方式进行 Canvas 绘图和实现基于 Canvas 的UI界面。
 
-import { spritejs } from 'sprite-vue'
+要使用 SpriteVue，你应该对 Vue 和 SpriteJS 本身有一些基本的了解，如果你希望深入研究 SpriteVue ，那么你应该先深入学习 SpriteJS 和 Vue。
 
-import { Scene } from 'sprite-react'
+## 起步
 
-<Playground>
-  <Scene>
-    <layer>
-      <sprite pos={[100, 100]} size={[50, 50]} bgcolor='red'></sprite>
-    </layer>
-  </Scene>
-</Playground>
+我们可以直接通过CDN引入sprite-vue：
 
-## Basic usage
+```html
+<script src="https://unpkg.com/sprite-vue/dist/sprite-vue.min.js"></script>
+```
 
-<Playground>
-<template>
-  abc
-</template>
-<script>
-  const a = 10;
-  console.log(a);
-</script>
-</Playground>
+使用它和直接使用几乎VueJS一样：
+
+```js
+const Vue = spritevue.Vue
+
+new Vue({
+  ...
+})
+```
+
+可以通过CodePen上给出的例子来学习使用SpriteVue，大部分情况下，使用Vue操作Sprite元素和使用Vue操作DOM元素是完全一致的。
+
+import CodePen from './component/codepen'
+
+<CodePen>
+  <p data-height="378" data-theme-id="13617" data-slug-hash="Wgaavy" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" className="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/Wgaavy/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+</CodePen>
