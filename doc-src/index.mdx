@@ -3,6 +3,10 @@ name: 简介
 route: '/'
 ---
 
+import GitHub from './component/github'
+
+<GitHub />
+
 # 简介
 
 SpriteVue 是结合 [SpriteJS](http://spritejs.org/) 和 [Vue](https://cn.vuejs.org/) 的 Canvas2D 渲染引擎，它让我们能够以组件化及声明式的方式进行 Canvas 绘图和实现基于 Canvas 的UI界面。
@@ -40,7 +44,7 @@ import CodePen from './component/codepen'
 SpriteJS的默认元素包括Scene、Layer、Group、Sprite、Label、Path，对应的Vue标签名为`s-scene`、`s-layer`、`s-group`、`s-sprite`、`s-label`、`s-path`，其中与浏览器DOM和SVG标签没有重名的如Scene、Layer、Group、Sprite这几个标签的`s-`前缀可以省略，Label和Path的前缀不可以省略。
 
 <CodePen>
-<p data-height="387" data-theme-id="13617" data-slug-hash="oPaJzO" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/oPaJzO/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="387" data-theme-id="13617" data-slug-hash="oPaJzO" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" className="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/oPaJzO/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 </CodePen>
 
 标签的属性可以分开写，也可以直接写一个`attrs`属性，即
@@ -86,7 +90,7 @@ SpriteJS的默认元素包括Scene、Layer、Group、Sprite、Label、Path，对
 下面的例子监听keydown事件并根据`r`、`g`、`b`键值改变五角星的颜色。
 
 <CodePen>
-<p data-height="352" data-theme-id="13617" data-slug-hash="MqPZNz" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/MqPZNz/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="352" data-theme-id="13617" data-slug-hash="MqPZNz" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" className="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/MqPZNz/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 </CodePen>
 
 ## 扩展vue组件
@@ -94,7 +98,7 @@ SpriteJS的默认元素包括Scene、Layer、Group、Sprite、Label、Path，对
 我们可以很方便地用vue的方式定义扩展组件。
 
 <CodePen>
-<p data-height="354" data-theme-id="13617" data-slug-hash="wEYZWW" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/wEYZWW/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="354" data-theme-id="13617" data-slug-hash="wEYZWW" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" className="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/wEYZWW/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 </CodePen>
 
 ## 扩展sprite元素
@@ -102,7 +106,7 @@ SpriteJS的默认元素包括Scene、Layer、Group、Sprite、Label、Path，对
 除了扩展vue组件之外，我们仍然可以扩展sprite本身的元素。要让vue识别扩展的元素，需要通过registerNodeType方法将它注册为标签。
 
 <CodePen>
-<p data-height="357" data-theme-id="13617" data-slug-hash="KxGYOB" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/KxGYOB/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="357" data-theme-id="13617" data-slug-hash="KxGYOB" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" className="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/KxGYOB/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 </CodePen>
 
 ## 状态和效果
@@ -112,7 +116,7 @@ SpriteJS的默认元素包括Scene、Layer、Group、Sprite、Label、Path，对
 下面的例子，我们点击圆形，它的颜色会产生一个随机的过度改变。
 
 <CodePen>
-<p data-height="359" data-theme-id="13617" data-slug-hash="MqPMZm" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/MqPMZm/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="359" data-theme-id="13617" data-slug-hash="MqPMZm" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" className="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/MqPMZm/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 </CodePen>
 
 ## Transition
@@ -140,7 +144,7 @@ SpriteJS的默认元素包括Scene、Layer、Group、Sprite、Label、Path，对
 下面的例子，三个圆（交通灯）随着时间循环变化。`v-if/v-else`指令结合`key`设置可以依次触发三个元素的enter、leave操作。
 
 <CodePen>
-<p data-height="410" data-theme-id="13617" data-slug-hash="MqzYRq" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/MqzYRq/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="410" data-theme-id="13617" data-slug-hash="MqzYRq" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" className="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/MqzYRq/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 </CodePen>
 
 注意`s-transition`除了传字符串'fade-in'参数之外，还可以传数组，`:enter="['fade-in', duration, easing]"`，slide类的参数还可以多传一个，如`show="['slide-in-left', duration, easing, distance]"`。
@@ -148,6 +152,21 @@ SpriteJS的默认元素包括Scene、Layer、Group、Sprite、Label、Path，对
 除了使用enter和exit，我们可以配合`v-show`指令使用show和hide：
 
 <CodePen>
-<p data-height="350" data-theme-id="13617" data-slug-hash="qMQOVx" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" class="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/qMQOVx/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="350" data-theme-id="13617" data-slug-hash="qMQOVx" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" className="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/qMQOVx/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</CodePen>
+
+## Transition group
+
+在SpriteVue中，`s-transition`不仅可以作用于一个元素，也可以作用于多个元素，如果它作用于多个元素，那么它自动会为这些元素创建一个group，我们可以设置group中元素被添加和移除的方式，具体做法是设置`s-transition`的enterMode和exitMode属性，它们可选的值包括：
+
+- normal 默认的添加和移除方式，把enter和exit同时作用于每个子元素
+- onebyone 把enter和exit按照子元素添加的顺序一一作用于子元素
+- onebyone-reverse 把enter和exit按照子元素添加顺序的倒序一一作用于子元素
+
+看一个例子：
+
+<CodePen>
+<p data-height="395" data-theme-id="13617" data-slug-hash="zJMewV" data-default-tab="js,result" data-user="akira-cn" data-pen-title="Sprite-Vue DEMO" className="codepen">See the Pen <a href="https://codepen.io/akira-cn/pen/zJMewV/">Sprite-Vue DEMO</a> by 月影 (<a href="https://codepen.io/akira-cn">@akira-cn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 </CodePen>
