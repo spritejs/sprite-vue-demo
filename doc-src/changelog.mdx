@@ -9,8 +9,18 @@ import GitHub from './component/github'
 
 # 更新日志
 
+## [0.10.0][2018-09-21]
+
+### 改进
+
+- 区分了 childNodes 和 children，前者包含所有元素，后者只包含类型不为DataNode的Sprite元素。
+
+### bug修复
+
+- 修复了由于存在TextNode导致Group元素可能插入失败的Bug。
+
 ## [0.10.0][2018-09-20]
 
 ### 改进
 
-- spritejs升级到2.16.1，支持了Scene的[displayRatio](http://spritejs.org/#/zh-cn/guide/resolution?id=displayratio)配置
+- spritejs升级到2.16.1，支持了Scene的[displayRatio](http://spritejs.org/#/zh-cn/guide/resolution?id=displayratio)配置。
