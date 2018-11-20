@@ -10,8 +10,8 @@
         </s-label>
       </group>
       <group display="flex" :pos="[100, 500]" :width="600" justifyContent="space-between">
-        <sprite v-for="(item, key, index) in items" v-show="item.visible" :bgcolor="item.color"
-        :size="[50, 50]" :key="index"></sprite>
+        <sprite v-for="(item, key, index) in items" v-show="item.visible"
+        :size="[50, 50]" :key="index" class="test"></sprite>
       </group>
     </layer>
   </scene>
@@ -28,9 +28,9 @@ export default {
       text: `Hello Sprite,Hello Sprite,Hello Sprite,Hello Sprite,Hello Sprite,Hello Sprite
           Hello Sprite,Hello Sprite,Hello Sprite,Hello Sprite,Hello Sprite,Hello Sprite`,
       items: [
-        { color: 'red', visible: true },
-        { color: 'blue', visible: true },
-        { color: 'green', visible: false },
+        { visible: true },
+        { visible: true },
+        { visible: true },
       ],
     };
     return window.test;
@@ -67,5 +67,17 @@ canvas {
   -webkit-user-select:none;
   -ms-user-select:none;
   user-select:none;
+}
+
+#container .test:nth-child(1) {
+  background-color: red;
+}
+
+#container .test:nth-child(2) {
+  background-color: blue;
+}
+
+#container .test:nth-child(3) {
+  background-color: green;
 }
 </style>

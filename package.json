@@ -15,7 +15,7 @@
   "dependencies": {
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "sprite-vue": "^0.11.0",
+    "sprite-vue": "^0.16.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
