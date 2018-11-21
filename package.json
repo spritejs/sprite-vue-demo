@@ -15,6 +15,7 @@
   "dependencies": {
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "sprite-extend-shapes": "^0.1.35",
     "sprite-vue": "^0.16.0",
     "vue-router": "^3.0.1"
   },
