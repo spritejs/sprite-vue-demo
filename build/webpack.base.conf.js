@@ -31,11 +31,17 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  externals: [
+    {
+      'sprite-vue': 'spritevue',
+    }
+  ],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       // 'vue$': 'vue/dist/vue.esm.js',
       // 'sprite-vue': 'sprite-vue/dist/sprite-vue.es6.js',
+      'vue': 'vue/dist/vue.js',
       '@': resolve('src'),
     }
   },

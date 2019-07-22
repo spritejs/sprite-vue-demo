@@ -1,4 +1,5 @@
 import { Vue } from 'sprite-vue';
+// import Vue from 'vue';
 import Router from 'vue-router';
 import Sprite from '@/components/Sprite';
 import HelloWorld from '@/components/HelloWorld';

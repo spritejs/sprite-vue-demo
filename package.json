@@ -15,9 +15,10 @@
   "dependencies": {
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "sprite-extend-shapes": "^0.1.35",
-    "sprite-vue": "^0.16.0",
-    "vue-router": "^3.0.1"
+    "sprite-vue": "^0.22.7",
+    "vue": "^2.6.8",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -68,12 +69,12 @@
     "url-loader": "^0.5.8",
     "vue-loader": "^15.4.2",
     "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.5.17",
+    "vue-template-compiler": "^2.6.8",
     "webpack": "^4.19.0",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-middleware": "^3.3.0",
-    "webpack-dev-server": "^3.1.8",
+    "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.1.4"
   },
   "engines": {

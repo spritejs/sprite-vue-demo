@@ -2,9 +2,9 @@
   <scene v-if="visible" id="container" :resolution="[1200, 1200]" :viewport="[600, 600]">
     <layer id="fglayer">
       <group>
-        <sprite :pos="[100, 100]" :bgcolor="bgcolor" :size="[100, 100]" v-on:click="onClick"
+        <sprite :pos="[100, 100]" :attrs="button" :size="[100, 100]" v-on:click="onClick"
         v-on:mouseenter="onMouseEnter"
-        v-on:mouseleave="onMouseLeave"></sprite>
+        v-on:mouseleave="onMouseLeave" ref="abc"></sprite>
         <s-label v-show="toggle" :pos="[300, 100]" :width="300"
         font="24px '宋体'" lineBreak="normal" :text="text">
         </s-label>
@@ -23,7 +23,9 @@ export default {
   data() {
     window.test = {
       visible: true,
-      bgcolor: 'green',
+      button: {
+        bgcolor: 'green',
+      },
       toggle: true,
       text: `Hello Sprite,Hello Sprite,Hello Sprite,Hello Sprite,Hello Sprite,Hello Sprite
           Hello Sprite,Hello Sprite,Hello Sprite,Hello Sprite,Hello Sprite,Hello Sprite`,
@@ -35,9 +37,18 @@ export default {
     };
     return window.test;
   },
+  computed: {
+    count() {
+      return this.$store;
+    },
+  },
   methods: {
     onClick(evt) {
-      console.log(evt);
+      console.log(this.$refs.abc);
+      console.log(this.count);
+      // console.log(store.state.count) // -> 1
+      console.log(this.button);
+      this.button.bgcolor = '#f00';
       this.toggle = !this.toggle;
     },
     onMouseEnter() {
